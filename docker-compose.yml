@@ -1,4 +1,4 @@
-version: "3"
+version: "3.8"
 
 services:
   app:
@@ -6,10 +6,10 @@ services:
       context: ./app
       dockerfile: Dockerfile.dev
     container_name: aepProject-frontEnd
+    volumes:
+      - "./app:/app"
     ports:
       - "5173:5173"
-    volumes:
-      - "./app:/application"
   server:
     build:
       context: ./server
